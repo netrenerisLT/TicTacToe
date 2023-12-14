@@ -1,7 +1,7 @@
 #active-game {
   text-align: center;
   margin: 2rem 0 5rem 0;
-  /* display: none; */
+  display: none;
 }
 
 #game-over {
@@ -17,6 +17,9 @@
 #game-over h2 {
   font-size: 2rem;
   margin: 1rem 0;
+}
+#winner-name {
+  text-transform: uppercase;
 }
 
 #active-player-name {

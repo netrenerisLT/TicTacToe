@@ -7,6 +7,7 @@ const gameData = [
   [0, 0, 0],
   [0, 0, 0],
 ];
+let isGameOver = false;
 let editedPlayer = 0;
 let activePlayer = 0;
 let currentRound = 1;
@@ -28,6 +29,7 @@ const startNewGameBtn = document.getElementById("start-game-btn");
 const gameAreaElement = document.getElementById("active-game");
 const gameFieldElements = document.querySelectorAll("#game-board li");
 const activePlayerName = document.getElementById("active-player-name");
+const gameOverElement = document.getElementById("game-over");
 
 /* ====================== player name box ====================== */
 EditPlayer1NameBtn.addEventListener("click", openPlayerConfig);

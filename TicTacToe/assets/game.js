@@ -1,4 +1,23 @@
+function resetGame() {
+  activePlayer = 0;
+  currentRound = 1;
+  isGameOver = false;
+  gameOverElement.firstElementChild.innerHTML = `You won <span id="winner-name">PLAYER NAME</span>!`;
+  gameOverElement.style.display = "none";
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      gameData[i][j] = 0;
+    }
+  }
+  for (const iterator of gameFieldElements) {
+    iterator.textContent = "";
+    iterator.classList.remove("disabled");
+  }
+}
+
 function startNewGame() {
+  resetGame();
   activePlayerName.textContent = players[activePlayer].name;
   players[0].name && players[1].name
     ? (gameAreaElement.style.display = "block")
@@ -52,6 +71,9 @@ function checkForGameOver() {
 }
 
 function selectGameField(event) {
+  if (isGameOver) {
+    return;
+  }
   const selectedColumn = event.target.dataset.col - 1;
   const selectedRow = event.target.dataset.row - 1;
 
@@ -66,8 +88,9 @@ function selectGameField(event) {
   gameData[selectedRow][selectedColumn] = activePlayer + 1;
 
   const winnerId = checkForGameOver();
-  console.log(winnerId);
-
+  if (winnerId !== 0) {
+    endGame(winnerId);
+  }
   currentRound++;
   switchPlayer();
 }
@@ -75,4 +98,15 @@ function selectGameField(event) {
 function switchPlayer() {
   activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
   activePlayerName.textContent = players[activePlayer].name;
+}
+
+function endGame(winnerId) {
+  isGameOver = true;
+  gameOverElement.style.display = "block";
+  if (winnerId > 0) {
+    gameOverElement.firstElementChild.firstElementChild.textContent =
+      players[winnerId - 1].name;
+  } else {
+    gameOverElement.firstElementChild.textContent = "It's a draw!";
+  }
 }
