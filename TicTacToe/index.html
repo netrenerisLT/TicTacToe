@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TicTacToe</title>
+    <link rel="stylesheet" href="/TicTacToe/styles/styles.css" />
+    <link rel="stylesheet" href="/TicTacToe/styles/overlays.css" />
+    <link rel="stylesheet" href="/TicTacToe/styles/configuration.css" />
+    <link rel="stylesheet" href="/TicTacToe/styles/game.css" />
     <script src="assets/app.js" defer></script>
+    <script src="assets/config.js" defer></script>
+    <script src="assets/game.js" defer></script>
   </head>
   <body>
-    <header>
+    <div id="backdrop"></div>
+    <header id="main-header">
       <h1>Play Tic Tac Toe</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing ela.</p>
     </header>
     <main>
-      <aside>
+      <aside class="modal" id="config-overlay">
         <h2>Choose your name</h2>
         <form>
-          <div>
+          <div class="form-control">
             <label for="playername">Player Name</label>
             <input type="text" name="playername" id="playername" />
           </div>
           <div>
-            <button type="button">Cancel</button>
-            <button type="submit">Submit</button>
+            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="submit" class="btn">Submit</button>
           </div>
         </form>
       </aside>
@@ -31,35 +38,39 @@
             <article>
               <h2>Player 1</h2>
               <h3>Player name</h3>
-              <p>X</p>
-              <button>Edit Name</button>
+              <p class="player-symbol">X</p>
+              <button class="btn btn-alt" id="edit-player-1-btn">
+                Edit Name
+              </button>
             </article>
           </li>
           <li>
             <article>
               <h2>Player 2</h2>
               <h3>Player name</h3>
-              <p>O</p>
-              <button>Edit Name</button>
+              <p class="player-symbol">O</p>
+              <button class="btn btn-alt" id="edit-player-2-btn">
+                Edit Name
+              </button>
             </article>
           </li>
         </ol>
-        <button>Start New Game</button>
+        <button class="btn new-game">Start New Game</button>
       </section>
       <section id="active-game">
-        <article>
-          <h3>You won <span id="winner-name">PLAYER NAME</span>!</h3>
+        <article id="game-over">
+          <h2>You won <span id="winner-name">PLAYER NAME</span>!</h2>
           <p>You can start a new game.</p>
         </article>
         <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
-        <ol>
+        <ol id="game-board">
           <li></li>
           <li></li>
           <li></li>
 
+          <li class="disabled">X</li>
           <li></li>
-          <li></li>
-          <li></li>
+          <li>O</li>
 
           <li></li>
           <li></li>
