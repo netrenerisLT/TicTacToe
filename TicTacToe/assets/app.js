@@ -1,9 +1,14 @@
 /* ====================== player name box ====================== */
 const EditPlayer1NameBtn = document.getElementById("edit-player-1-btn");
 const EditPlayer2NameBtn = document.getElementById("edit-player-2-btn");
+
+const gameData = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0],
+];
 let editedPlayer = 0;
 let activePlayer = 0;
-
 const players = [
   { name: "", symbol: "X" },
   { name: "", symbol: "O" },
@@ -21,6 +26,7 @@ const errorMessage = document.getElementsByName("playernamevalue");
 const startNewGameBtn = document.getElementById("start-game-btn");
 const gameAreaElement = document.getElementById("active-game");
 const gameFieldElements = document.querySelectorAll("#game-board li");
+const activePlayerName = document.getElementById("active-player-name");
 
 /* ====================== player name box ====================== */
 EditPlayer1NameBtn.addEventListener("click", openPlayerConfig);
