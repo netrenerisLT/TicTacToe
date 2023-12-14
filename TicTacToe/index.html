@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/TicTacToe/styles/overlays.css" />
     <link rel="stylesheet" href="/TicTacToe/styles/configuration.css" />
     <link rel="stylesheet" href="/TicTacToe/styles/game.css" />
-    <script src="assets/app.js" defer></script>
     <script src="assets/config.js" defer></script>
     <script src="assets/game.js" defer></script>
+    <script src="assets/app.js" defer></script>
   </head>
   <body>
     <div id="backdrop"></div>
@@ -27,8 +27,12 @@
             <input type="text" name="playername" id="playername" />
           </div>
           <div>
-            <button type="button" class="btn btn-alt">Cancel</button>
-            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn btn-alt" id="cancel-config-button">
+              Cancel
+            </button>
+            <button type="submit" class="btn" id="submit-config-button">
+              Submit
+            </button>
           </div>
         </form>
       </aside>
