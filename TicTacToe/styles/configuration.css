@@ -6,6 +6,11 @@
   margin: 1rem 0;
 }
 
+.error label,
+.error input::placeholder {
+  color: #8f3434;
+}
+
 .form-control {
   margin: 1.5rem 0;
 }

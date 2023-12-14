@@ -51,7 +51,7 @@
 }
 
 #game-board li.disabled {
-  background-color: #8f343418;
+  background-color: #8f3434d7;
+  color: white;
   cursor: default;
-  color: inherit;
 }
